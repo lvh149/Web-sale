@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#div_tong{
+			background: p#cd1818;
+			width: 100%;
+			height: 2420px;			
+
+		}
+		#div_tren{
+			background: #cd1818;
+			width: 100%;
+			height: 120px;
+
+			
+		}
+		#div_tren>.trai{
+			background: #cd1818;
+			width: 15%;
+			height: 70%;
+			float: left;
+		}
+
+		#div_tren>.giua{
+			background: #cd1818;
+			width: 50%;
+			height: 70%;
+			float: left;
+			text-align: center;
+			position: relative;
+			
+		}		
+		#div_tren>.phai{
+			background: #cd1818;
+			width: 35%;
+			height: 70%;
+			float: left;			
+			position: relative;
+			
+		}
+		#div_tren>.duoi{
+			background: #212529;
+			width: 100%;
+			height: 30%;
+			float: left;
+		}
+		
+		
+		#div_giua{
+			
+			width: 100%;
+			height: 2000px;
+			margin-left:20px ;
+		}
+		#div_giua>.tren{
+			
+			width: 100%;
+			height: 33%;			
+		}
+		#div_giua>.tren>.tren{
+			
+			width: 100%;
+			height: 10%;
+		}
+		#div_giua>.tren>.duoi{			
+			
+			width: 24%;
+			height: 90%;
+			float: left;
+			border: 1px solid black;
+		}
+
+		#div_giua>.giua{
+			
+			width: 100%;
+			height: 33%;			
+		}
+		#div_giua>.giua>.tren{
+			
+			width: 100%;
+			height: 10%;
+		}
+		#div_giua>.giua>.duoi{
+			
+			width: 24%;
+			height: 90%;
+			float: left;
+			border: 1px solid black;
+		}
+
+		#div_giua>.duoi{
+			
+			width: 100%;
+			height: 34%;
+				
+		}
+		#div_giua>.duoi>.tren{
+			
+			width: 100%;
+			height: 10%;
+		}
+		#div_giua>.duoi>.duoi{
+			
+			width: 24%;
+			height: 84%;
+			float: left;
+			border: 1px solid black;
+		}
+
+		#div_duoi{
+			
+			width: 100%;
+			height: 300px;
+		}
+		
+		body{
+			margin: 0;
+			padding: 0;
+		}		
+		ul{
+			list-style-type: none;
+			padding-left: 20px;
+			margin: 0;
+		}
+		
+		ul > li > ul{
+			display: none;
+		}
+		ul > li:hover ul{
+			display: block;
+			position: absolute;
+			background: white;			
+			width: 450px;
+			height: 300px;
+			/*float: left;*/
+			border: 1px solid black;
+
+
+		}
+		ul > li >ul >li{
+			
+			margin: 0px ;
+			border: none;
+			padding: 20px;
+		}
+		ul li{
+			float: left;
+			width: 150px;			
+			height: 36px;
+			/*text-align: center;*/
+			display: block;
+			margin-right: 0px;
+			padding-bottom: 0;
+			position: relative;
+			align-items: center;
+
+		}
+		ul>li>a{
+			align-items: center;
+			height: 100%;
+			display: flex;
+			
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		img.san_pham{
+			margin: 30px;
+			padding: 30px;
+			height: 40%;
+			width: 60%;
+		}
+		div.name{
+			margin-left: 20px;
+			height: 50px;
+			width: 80%;
+			font-size: 25px;
+			line-height: normal;
+			font-weight: 700;
+		}
+		div.prices{
+			margin-left: 20px;
+			height: 50px;
+			width: 80%;
+			font-size: 25px;
+			line-height: normal;
+			font-weight: 700;
+			color: red;
+		}
+		</style>
+</head>
+<body>
+	<div id="div_tong">
+		<div id="div_tren">
+			<div class="trai">
+				<img src="logo.png" style="width: 100%;height: 100%;">
+			</div>
+
+			<div class="giua">				
+				<form style="position: absolute;top:20px;left: 45px;">
+					<input type="text" name="tim_kiem" placeholder="    Nhập tên điện thoại, máy tính, phụ kiện,... cần tìm"
+					 style="width: 600px;height: 40px;border-radius: 2px;border: none;font-size: 14px;">
+					 
+					<button type="submit" style="height: 40px;">Tìm Kiếm</button>
+				</form>
+			</div>
+			
+			<div class="phai">				
+				<a href="#">
+					<div style="position: absolute;right: 20px;text-align: center;">				
+						<img src="giohang.png" style="width: 80px;">
+						<br>
+						<span style="color: white;">Giỏ hàng</span>
+					</div>
+				</a>
+				<a href="#">					
+						<div style="position: absolute;right: 150px;top:10px;text-align: center;">				
+						<img src="tintuc.png" style="width: 85px;">
+						<br>
+						<span style="color: white;">Tin tức</span>
+					</div>
+				</a>
+			</div>
+			
+			<div class="duoi">
+				<ul>
+					<li>
+						<a href="#" style="color: white;">ĐIỆN THOẠI</a>
+						<ul>
+							<h3>Hãng sản xuất</h3>
+							
+							<li>
+								<a href="#">Apple</a>
+							</li>
+							<li>
+								<a href="#">Samsung</a>
+							</li>
+							<li>
+								<a href="#">OPPO</a>
+							</li>
+							<li>
+								<a href="#">Vivo</a>
+							</li>
+							<li>
+								<a href="#">Vsmart</a>
+							</li>
+						</ul>
+
+					</li>
+					<li>
+						<a href="#" style="color: white;">LAPTOP</a>
+						<ul>
+							<h3>Hãng sản xuất</h3>
+							
+							<li>
+								<a href="#">Apple(Macbook)</a>
+							</li>
+							<li>
+								<a href="#">Asus</a>
+							</li>
+							<li>
+								<a href="#">Acer</a>
+							</li>
+							<li>
+								<a href="#">Hp</a>
+							</li>
+							<li>
+								<a href="#">Dell</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#" style="color: white;">APPLE</a>
+						<ul>
+							<h3>Các sản phẩm của Apple</h3>
+							
+							<li>
+								<a href="#">Iphone</a>
+							</li>
+							<li>
+								<a href="#">Ipad</a>
+							</li>
+							<li>
+								<a href="#">Macbook</a>
+							</li>
+							<li>
+								<a href="#">AppleWatch</a>
+							</li>
+							<li>
+								<a href="#">Apple Tai nghe</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="#" style="color: white;">PC-LINH KIỆN</a>
+						<ul>
+							<li>
+								<a href="#">PC</a>
+							</li>
+							<li>
+								<a href="#">Linh kiện</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="div_giua">
+			<div class="tren">
+				<div class="tren">
+					<h2>KHUYẾN MÃI HOT</h2>
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="sp1.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>					
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="sp2.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="sp1.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+					
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="sp2.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+				</div>
+			</div>
+			<div class="giua">				
+				<div class="tren">
+					<h2>ĐIỆN THOẠI NỔI BẬT</h2>
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="sp1.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+					
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="sp2.jpg"></a>
+					<div class="name">Nokia 1280</div>
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="sp1.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+					
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="sp2.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+				</div>
+			</div>
+			
+			<div class="duoi">
+				<div class="tren">
+					<h2>LAPTOP BÁN CHẠY</h2>
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="laptop1.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+					
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="laptop2.jpg"></a>
+					<div class="name">Nokia 1280</div>
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="laptop1.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+					
+				</div>
+				<div class="duoi">
+					<a href="#"><img class="san_pham" src="laptop2.jpg"></a>
+					<a><div class="name">Nokia 1280</div></a>
+					<div class="prices">Free</div>
+				</div>
+			</div>				
+		</div>
+		<div id="div_duoi">
+			<hr>
+		</div>
+	</div>
+</body>
+</html>
