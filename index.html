@@ -72,6 +72,7 @@
 			height: 90%;
 			float: left;
 			border: 1px solid black;
+			border-radius: 25px;
 		}
 
 		#div_giua>.giua{
@@ -90,6 +91,7 @@
 			height: 90%;
 			float: left;
 			border: 1px solid black;
+			border-radius: 25px;
 		}
 
 		#div_giua>.duoi{
@@ -109,6 +111,7 @@
 			height: 84%;
 			float: left;
 			border: 1px solid black;
+			border-radius: 25px;
 		}
 
 		#div_duoi{
@@ -146,6 +149,7 @@
 			margin: 0px ;
 			border: none;
 			padding: 20px;
+
 		}
 		ul li{
 			float: left;
@@ -157,14 +161,28 @@
 			padding-bottom: 0;
 			position: relative;
 			align-items: center;
+			
 
 		}
 		ul>li>a{
 			align-items: center;
 			height: 100%;
 			display: flex;
+			color: white;
 			
 		}
+		ul>li>ul>li>a{
+			color: black;
+		}
+		ul>li>a:hover {
+			color: #BBBBBB;
+		}
+		ul>li>ul>li>a:hover {
+			color: red;
+			font-weight: 700;
+			font-size: 17px;
+		}
+
 		a{
 			text-decoration: none;
 			color: black;
@@ -192,13 +210,17 @@
 			font-weight: 700;
 			color: red;
 		}
+		div>a:hover img{
+			height: 45%;
+			width: 65%;
+		}
 		</style>
 </head>
 <body>
 	<div id="div_tong">
 		<div id="div_tren">
 			<div class="trai">
-				<a href="#"><img src="img\logo.png" style="width: 100%;height: 100%;"></a>
+				<a href="#"><img src="logo.png" style="width: 100%;height: 100%;"></a>
 			</div>
 
 			<div class="giua">				
@@ -213,14 +235,14 @@
 			<div class="phai">				
 				<a href="#">
 					<div style="position: absolute;right: 20px;text-align: center;">				
-						<img src="img\giohang.png" style="width: 80px;">
+						<img src="giohang.png" style="width: 80px;">
 						<br>
 						<span style="color: white;">Giỏ hàng</span>
 					</div>
 				</a>
 				<a href="#">					
 						<div style="position: absolute;right: 150px;top:10px;text-align: center;">				
-						<img src="img\tintuc.png" style="width: 85px;">
+						<img src="tintuc.png" style="width: 85px;">
 						<br>
 						<span style="color: white;">Tin tức</span>
 					</div>
@@ -230,7 +252,7 @@
 			<div class="duoi">
 				<ul>
 					<li>
-						<a href="#" style="color: white;">ĐIỆN THOẠI</a>
+						<a href="#" >ĐIỆN THOẠI</a>
 						<ul>
 							<h3>Hãng sản xuất</h3>
 							
@@ -253,7 +275,7 @@
 
 					</li>
 					<li>
-						<a href="#" style="color: white;">LAPTOP</a>
+						<a href="#" >LAPTOP</a>
 						<ul>
 							<h3>Hãng sản xuất</h3>
 							
@@ -275,7 +297,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="#" style="color: white;">APPLE</a>
+						<a href="#" >APPLE</a>
 						<ul>
 							<h3>Các sản phẩm của Apple</h3>
 							
@@ -298,7 +320,7 @@
 					</li>
 
 					<li>
-						<a href="#" style="color: white;">PC-LINH KIỆN</a>
+						<a href="#" >PC-LINH KIỆN</a>
 						<ul>
 							<li>
 								<a href="#">PC</a>
@@ -317,23 +339,23 @@
 					<h2>KHUYẾN MÃI HOT</h2>
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\sp1.jpg"></a>
+					<a href="#"><img class="san_pham" src="sp1.jpg"></a>
 					<a><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>					
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\sp2.jpg"></a>
+					<a href="#"><img class="san_pham" src="sp2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\sp1.jpg"></a>
+					<a href="#"><img class="san_pham" src="sp1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\sp2.jpg"></a>
+					<a href="#"><img class="san_pham" src="sp2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
@@ -343,24 +365,24 @@
 					<h2>ĐIỆN THOẠI NỔI BẬT</h2>
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\sp1.jpg"></a>
+					<a href="#"><img class="san_pham" src="sp1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\sp2.jpg"></a>
+					<a href="#"><img class="san_pham" src="sp2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\sp1.jpg"></a>
+					<a href="#"><img class="san_pham" src="sp1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\sp2.jpg"></a>
+					<a href="#"><img class="san_pham" src="sp2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
@@ -371,24 +393,24 @@
 					<h2>LAPTOP BÁN CHẠY</h2>
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\laptop1.jpg"></a>
+					<a href="#"><img class="san_pham" src="laptop1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\laptop2.jpg"></a>
+					<a href="#"><img class="san_pham" src="laptop2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\laptop1.jpg"></a>
+					<a href="#"><img class="san_pham" src="laptop1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
 				<div class="duoi">
-					<a href="#"><img class="san_pham" src="img\laptop2.jpg"></a>
+					<a href="#"><img class="san_pham" src="laptop2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
@@ -396,6 +418,7 @@
 		</div>
 		<div id="div_duoi">
 			<hr>
+			<h1>bla bla bla</h1>
 		</div>
 	</div>
 </body>
