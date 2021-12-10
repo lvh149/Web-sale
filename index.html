@@ -15,8 +15,6 @@
 			background: #cd1818;
 			width: 100%;
 			height: 120px;
-
-			
 		}
 		#div_tren>.trai{
 			background: #cd1818;
@@ -61,57 +59,18 @@
 			width: 100%;
 			height: 33%;			
 		}
-		#div_giua>.tren>.tren{
-			
-			width: 100%;
-			height: 10%;
-		}
-		#div_giua>.tren>.duoi{			
-			
-			width: 24%;
-			height: 90%;
-			float: left;
-			border: 1px solid black;
-			border-radius: 25px;
-		}
-
+		
 		#div_giua>.giua{
 			
 			width: 100%;
 			height: 33%;			
 		}
-		#div_giua>.giua>.tren{
-			
-			width: 100%;
-			height: 10%;
-		}
-		#div_giua>.giua>.duoi{
-			
-			width: 24%;
-			height: 90%;
-			float: left;
-			border: 1px solid black;
-			border-radius: 25px;
-		}
-
+		
 		#div_giua>.duoi{
 			
 			width: 100%;
-			height: 34%;
+			height: 33%;
 				
-		}
-		#div_giua>.duoi>.tren{
-			
-			width: 100%;
-			height: 10%;
-		}
-		#div_giua>.duoi>.duoi{
-			
-			width: 24%;
-			height: 84%;
-			float: left;
-			border: 1px solid black;
-			border-radius: 25px;
 		}
 
 		#div_duoi{
@@ -119,11 +78,7 @@
 			width: 100%;
 			height: 300px;
 		}
-		
-		body{
-			margin: 0;
-			padding: 0;
-		}		
+			
 		ul{
 			list-style-type: none;
 			padding-left: 20px;
@@ -192,28 +147,49 @@
 			padding: 30px;
 			height: 40%;
 			width: 60%;
+			border: none;
 		}
 		div.name{
 			margin-left: 20px;
+			margin-top: 20px;
 			height: 50px;
 			width: 80%;
 			font-size: 25px;
 			line-height: normal;
 			font-weight: 700;
+			float: left;
 		}
 		div.prices{
 			margin-left: 20px;
+			margin-top: 20px;
 			height: 50px;
 			width: 80%;
 			font-size: 25px;
 			line-height: normal;
 			font-weight: 700;
 			color: red;
+			float: left;
 		}
 		div>a:hover img{
 			height: 45%;
 			width: 65%;
 		}
+		.loai_san_pham{
+			width: 100%;
+			height: 10%;
+		}
+		.san_pham{
+			width: 24%;
+			height: 84%;
+			float: left;
+			border: 1px solid black;
+			border-radius: 25px;
+		}
+		
+		body{
+			margin: 0;
+			padding: 0;
+		}	
 		</style>
 </head>
 <body>
@@ -341,53 +317,53 @@
 		</div>
 		<div id="div_giua">
 			<div class="tren">
-				<div class="tren">
+				<div class="loai_san_pham">
 					<h2>SẢN PHẨM MỚI</h2>
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\sp1.jpg"></a>
 					<a><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>					
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\sp2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\sp1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\sp2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
 			</div>
 			<div class="giua">				
-				<div class="tren">
+				<div class="loai_san_pham">
 					<h2>ĐIỆN THOẠI</h2>
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\sp1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\sp2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\sp1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\sp2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
@@ -395,27 +371,27 @@
 			</div>
 			
 			<div class="duoi">
-				<div class="tren">
+				<div class="loai_san_pham">
 					<h2>LAPTOP</h2>
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\laptop1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\laptop2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\laptop1.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
 					
 				</div>
-				<div class="duoi">
+				<div class="san_pham">
 					<a href="#"><img class="san_pham" src="img\laptop2.jpg"></a>
 					<a href="#"><div class="name">Nokia 1280</div></a>
 					<div class="prices">Free</div>
