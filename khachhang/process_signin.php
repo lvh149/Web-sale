@@ -20,8 +20,8 @@ if ($number_rows == 1) {
 	
 	$each = mysqli_fetch_array($result);
 	$id = $each['id'];
-	$_SESSION['id'] = $id;
-	$_SESSION['name'] = $each['name'];
+	$_SESSION['id_cus'] = $id;
+	$_SESSION['name_cus'] = $each['name'];
 	if ($remember) {
 		$token = uniqid('user_',true);
 		$sql = "update customers
@@ -31,9 +31,13 @@ if ($number_rows == 1) {
 		id = '$id'";
 		mysqli_query($connect,$sql);
 		setcookie('remember',$token,time()+60*60*24*30);
-	}
-	header('location:index.php');
-	exit();
+	};	
+	echo 1;
+    
+}else{
+	$_SESSION['error'] = "Đăng nhập thất bại";
 }
 
-header("location:signin.php");
+
+
+

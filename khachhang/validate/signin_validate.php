@@ -1,7 +1,7 @@
 <?php 
 
 
-if(empty($_POST['email']) | empty($_POST['password'])){
+if(!isset($_POST['email']) | !isset($_POST['password'])){
 	$_SESSION['error'] = 'Phải điền đầy đủ thông tin';
 	header('location:signin.php');
 	exit;
@@ -17,7 +17,7 @@ if (!preg_match('/^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]+$/', $_POST['email'] ))
 
 }
 
-if(strlen($_POST['password']) < 8 ){
+if(strlen($_POST['password']) < 6 ){
 	$check_error = true;
 
 }

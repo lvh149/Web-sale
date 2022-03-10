@@ -9,9 +9,31 @@ $each = mysqli_fetch_array($result)
 ?>
 
 <div id="div_giua">
-	 <img height="100"  src="admin/products/photos/<?php echo $each['photo'] ?>">
 	<a><div class="name"><?php echo $each['name'] ?></div></a>
-	<div class="prices">Free</div>
-	<p><?php echo $each['description'] ?></p>	
+	<img height="500"  src="../admin/products/photo/<?php echo $each['photo'] ?>">
+	<?php if(!empty($_SESSION['id_cus'])) { ?> 
 		
+		<button style="height: 100px;width: 300px; background: #3f95fb; color:white" data-id='<?php echo $each['id'] ?>'
+			class='btn-add-to-cart'
+			>
+			Thêm vào giỏ hàng
+		</button>
+	<?php }else{ ?>
+		
+		<button style="height: 100px;width: 300px; background: #3f95fb; color:white" type="button" data-toggle = "modal" data-target="#modal-signin">Thêm vào giỏ hàng</button>
+	<?php } ?>
+	<?php if(!empty($_SESSION['id_cus'])) { ?> 
+		
+		<button style="height: 100px;width: 300px; background: #cd1818; color:white" data-id='<?php echo $each['id'] ?>'
+			class='btn-buy'
+			>
+			Mua ngay
+		</button> 
+	<?php }else{ ?>
+		
+		<button style="height: 100px;width: 300px; background: #cd1818; color:white" type="button" data-toggle = "modal" data-target="#modal-signin">Mua ngay</button>
+	<?php } ?>		
+	<div class="prices"><?php echo number_format($each['price'], 0, ',', '.') ?> VND</div>	<br><br><br><br><br>
+	<p><?php echo nl2br($each['description']) ?></p>	
+	
 </div>

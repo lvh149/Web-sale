@@ -1,4 +1,4 @@
-<<?php 
+<?php 
 
 session_start();
 require 'check_login_cus.php';
@@ -12,7 +12,7 @@ if (empty($_SESSION['cart'][$id])) {
 }
 
 
-if ($type ==='decre') {
+if ($type ==='0') {
 	if ($_SESSION['cart'][$id]['quantity'] >1) {
 		$_SESSION['cart'][$id]['quantity']--;
 	}else {
@@ -22,5 +22,3 @@ if ($type ==='decre') {
 	$_SESSION['cart'][$id]['quantity']++;
 }
 
-
-header('location:view_cart.php');

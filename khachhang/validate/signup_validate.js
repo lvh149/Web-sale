@@ -21,7 +21,7 @@
 			document.getElementById('error_phone').innerHTML="Số điện thoại không được để trống";
 			check_error=true;
 		}else{
-			let regex_phone= /^(\+84|0)[1-9]{9}$/;
+			let regex_phone= /^(\+84|0)[0-9]{9}$/;
 			if(!regex_phone.test(phone)){
 				document.getElementById('error_phone').innerHTML="Số điện thoại bao gồm 10 số bắt đầu bằng 0 hoặc +84";
 				check_error=true;
@@ -73,8 +73,8 @@
 		if(password.length===0){
 			document.getElementById('error_password').innerHTML="Mật khẩu không được để trống";
 			check_error=true;
-		}else if(password.length <8){
-			document.getElementById('error_password').innerHTML="Đặt cái mật khẩu dài hơn 8 ký tự đê";
+		}else if(password.length <6){
+			document.getElementById('error_password').innerHTML="Đặt cái mật khẩu dài hơn 6 ký tự đê";
 			check_error=true;
 		}else{
 			document.getElementById('error_password').innerHTML='';

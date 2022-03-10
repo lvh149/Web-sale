@@ -46,14 +46,18 @@
 	width: 100%;
 	height: 2000px;
 	margin-left:20px ;
-
-
 }
 #div_giua>.tren{
 	
 	width: 100%;
 	height: 33%;			
 }
+#div_giua>.tong{
+	
+	width: 100%;
+	height: 60%;			
+}
+
 
 #div_giua>.giua{
 	
@@ -72,6 +76,29 @@
 	
 	width: 100%;
 	height: 300px;
+	background-color: lightblue;
+	
+}
+#div_duoi>.trai{
+	
+	width: 38%;
+	height: 280px;
+	padding-left: 20px;
+	float: left;
+	
+}
+#div_duoi>.giua{
+	
+	width: 30%;
+	height: 280px;
+	float: left;
+	
+}
+#div_duoi>.phai{
+	
+	width: 30%;
+	height: 280px;
+	float: left;
 	
 }
 	
@@ -88,7 +115,7 @@ ul > li:hover ul{
 	display: block;
 	position: absolute;
 	background: white;			
-	width: 450px;
+	width: 600px;
 	height: 300px;
 	/*float: left;*/
 	border: 1px solid black;
@@ -172,7 +199,7 @@ div>a:hover img{
 }
 .loai_san_pham{
 	width: 100%;
-	height: 10%;
+	height: 65px;
 }
 .san_pham{
 	width: 366px;
