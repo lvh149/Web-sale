@@ -44,7 +44,7 @@ require 'check_login_cus.php';
                 foreach ($row as $each) {
                     ?>
                     <tr>
-                        <td><?php echo $each['name'] ?></td>
+                        <td><a href="product.php?id=<?php echo $each['id'] ?>"><?php echo $each['name'] ?></a></td>
                         <td><img height="100" src="../admin/products/photo/<?php echo $each['photo'] ?>"></td>                       
                         <td><?php echo $each['price'] ?></td>
                         <td><?php echo $each['quantity'] ?></td>

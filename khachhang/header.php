@@ -4,12 +4,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	
 </head>
 <body>
-
-</body>
-</html>
-<div id="div_tren">
+	<div id="div_tren">
 	<div class="trai">
 		<a href="index.php"><img src="img\logo.png" style="width: 100%;height: 100%;"></a>
 	</div>
@@ -20,10 +18,9 @@
 		if (isset($_GET['search'])) {
 			$search =$_GET['search'];
 		} 
-		?>				
+		?>		 		
 		<form style="position: absolute;top:20px;left: 45px;" method="get" action="search.php">
-			<input type="search" name="search" value="<?php echo $search ?>" placeholder="    Nhập tên điện thoại, máy tính, phụ kiện,... cần tìm"
-			style="width: 600px;height: 40px;border-radius: 2px;border: none;font-size: 14px;padding-left: 20px;">
+			<?php include 'live_search.php' ?>
 			
 			<button type="submit" style="height: 40px;">Tìm Kiếm</button>
 		</form>
@@ -50,9 +47,9 @@
 		<div class="menu-cus" style="position: absolute;right: 20px;top: 30px;text-align: center;<?php if(empty($_SESSION['id_cus'])){ ?> display: none; <?php } ?>">				
 			Chào,
 			<a href="user.php">
-			<span id="span-name">
-				<?php echo $_SESSION['name_cus'] ?? '' ?>
-			</span>
+				<span id="span-name">
+					<?php echo $_SESSION['name_cus'] ?? '' ?>
+				</span>
 			</a>
 			<br>
 			<a href="signout.php">		
@@ -111,7 +108,15 @@
 
 	</div>
 
-	<?php if(empty($_SESSION['id_cus'])){
+	
+<?php if(empty($_SESSION['id_cus'])){
 		include 'signup.php'; 
-	 	include 'signin.php'; 
-	} ?>	
+		include 'signin.php';
+
+	} ?>
+
+
+</body>
+</html>
+
+	

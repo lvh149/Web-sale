@@ -76,9 +76,9 @@ $menu = mysqli_query($connect,$sql);
 
                         <option
                                 value="<?php echo $a_menu["id"]?>"
-                            <?php if($each["menu_id"]== $a_menu["id"])  ?>
+                            <?php if($a_menu["id"] == $each["menu_id"]){ ?>
                                 selected
-                            <?php  ?>
+                            <?php } ?>
                         >
                             <?php echo $a_menu["name"]?>
 
@@ -94,9 +94,9 @@ $menu = mysqli_query($connect,$sql);
 
                         <option
                                 value="<?php echo $manufacturer["id"]?>"
-                            <?php if($each["manufacturer_id"]== $manufacturer["id"])  ?>
+                            <?php if($each["manufacturer_id"]== $manufacturer["id"]){  ?>
                                 selected
-                            <?php  ?>
+                            <?php } ?>
                         >
                             <?php echo $manufacturer["name"]?>
 

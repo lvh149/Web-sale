@@ -1,4 +1,3 @@
-
 <style type="style2.css"></style> 
 <?php 
 $name = $_GET['name'];
@@ -66,7 +65,7 @@ switch ($sort) {
 	<div id="div_giua">	
 		<div class="tong">				
 			<div class="loai_san_pham">
-				<h2>ĐIỆN THOẠI</h2>
+				<h2><?php echo $name ?></h2>
 			</div>
 			
 			<select name="slt-sort" id="slt-sort">
@@ -106,5 +105,3 @@ switch ($sort) {
 			
 		<?php } ?>
 	</div>
-
-<?php include 'ajax_select_pagination.js' ?>

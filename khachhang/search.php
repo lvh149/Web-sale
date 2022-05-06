@@ -33,7 +33,10 @@ $result = mysqli_query($connect,$sql);
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-	<link rel="stylesheet" href="style2.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style2.css">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div id="div_tong">
@@ -48,28 +51,56 @@ $result = mysqli_query($connect,$sql);
 					<div class="san_pham">
 						<a href="product.php?id=<?php echo $each['id'] ?>"><img class="san_pham" src="../admin/products/photo/<?php echo $each['photo'] ?>"></a>
 						<a><div class="name"><?php echo $each['name'] ?></div></a>
-						<div class="prices">Free</div>
-						<a 
+						<div class="prices"><?php echo number_format($each['price'], 0, ',', '.') ?> VND</div>
 						<?php if(!empty($_SESSION['id_cus'])) { ?> 
-							href="add_to_cart.php?id=<?php echo $each['id'] ?>" 
-						<?php }else{  ?> 
-							href="signin.php" 
-							<?php } ?>>
-							Thêm vào giỏ
-						</a>										
+							<br>
+							<button data-id='<?php echo $each['id'] ?>'
+								class='btn-add-to-cart'
+								>
+								Thêm vào giỏ hàng
+							</button>
+						<?php }else{ ?>
+							<button type="button" data-toggle = "modal" data-target="#modal-signin">Thêm vào giỏ hàng</button>
+						<?php } ?>											
 					</div>
 				<?php } ?>
 			</div>
 			Trang
 			<?php for($i=1; $i <=$number_page;$i++){ ?>
-					<a href="search.php?page=<?php echo $i ?>&search=<?php echo $search ?>">
-						<button>
-							<?php echo $i ?>
-						</button>				
-					</a>
+				<a href="search.php?page=<?php echo $i ?>&search=<?php echo $search ?>">
+					<button>
+						<?php echo $i ?>
+					</button>				
+				</a>
 			<?php } ?>
 		</div>		
 		<?php include 'footer.php' ?>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".btn-add-to-cart").click(function() {
+				let id = $(this).data('id');
+				$.ajax({
+					url: 'add_to_cart.php',
+					type: 'GET',
+				// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+				data: {id},
+			})
+				.done(function(response) {
+					if (response == 1) {
+						alert('Thành công');
+					}else{
+						alert(response);
+					}
+
+				});
+
+			});
+
+		});
+
+	</script>	
 </body>
 </html>
