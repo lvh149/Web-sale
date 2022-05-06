@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jan 27, 2022 at 12:31 PM
--- Server version: 5.7.33
--- PHP Version: 7.4.19
+-- Máy chủ: localhost
+-- Thời gian đã tạo: Th5 06, 2022 lúc 05:47 AM
+-- Phiên bản máy phục vụ: 5.7.33
+-- Phiên bản PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_shop`
+-- Cơ sở dữ liệu: `db_shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Cấu trúc bảng cho bảng `customers`
 --
 
 CREATE TABLE `customers` (
@@ -40,17 +39,17 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `customers`
+-- Đang đổ dữ liệu cho bảng `customers`
 --
 
 INSERT INTO `customers` (`id`, `name`, `phone`, `gender`, `address`, `email`, `password`, `token`) VALUES
-(24, 'Khách Hàng', '0123456789', 1, 'Việt Nam', 'kh1@gmail.com', '123456', NULL),
+(24, 'Khách Hàng', '0123456789', 1, 'Việt Nam', 'kh1@gmail.com', '12345678', 'user_6242e7f4854545.98811726'),
 (31, 'Lê Hưng', '+84123456789', 1, 'Đông Lào', 'auzeze111@gmail.com', 'hahaha', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employees`
+-- Cấu trúc bảng cho bảng `employees`
 --
 
 CREATE TABLE `employees` (
@@ -67,7 +66,7 @@ CREATE TABLE `employees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `employees`
+-- Đang đổ dữ liệu cho bảng `employees`
 --
 
 INSERT INTO `employees` (`id`, `name`, `phone`, `address`, `gender`, `working_year`, `email`, `password`, `token`, `levels`) VALUES
@@ -77,7 +76,7 @@ INSERT INTO `employees` (`id`, `name`, `phone`, `address`, `gender`, `working_ye
 -- --------------------------------------------------------
 
 --
--- Table structure for table `forgot_password`
+-- Cấu trúc bảng cho bảng `forgot_password`
 --
 
 CREATE TABLE `forgot_password` (
@@ -89,7 +88,7 @@ CREATE TABLE `forgot_password` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `manufactures`
+-- Cấu trúc bảng cho bảng `manufactures`
 --
 
 CREATE TABLE `manufactures` (
@@ -99,7 +98,7 @@ CREATE TABLE `manufactures` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `manufactures`
+-- Đang đổ dữ liệu cho bảng `manufactures`
 --
 
 INSERT INTO `manufactures` (`id`, `menu_id`, `name`) VALUES
@@ -119,7 +118,7 @@ INSERT INTO `manufactures` (`id`, `menu_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Cấu trúc bảng cho bảng `menu`
 --
 
 CREATE TABLE `menu` (
@@ -128,7 +127,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `menu`
+-- Đang đổ dữ liệu cho bảng `menu`
 --
 
 INSERT INTO `menu` (`id`, `name`) VALUES
@@ -138,7 +137,7 @@ INSERT INTO `menu` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Cấu trúc bảng cho bảng `orders`
 --
 
 CREATE TABLE `orders` (
@@ -155,16 +154,17 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `orders`
+-- Đang đổ dữ liệu cho bảng `orders`
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `employee_id`, `created_at`, `receiver_name`, `receiver_phone`, `receiver_address`, `status`, `note`, `total_price`) VALUES
-(23, 24, NULL, '2022-01-27 12:22:21', 'Khách Hàng', '0123456789', 'Việt Nam', 1, '', 64000000);
+(23, 24, NULL, '2022-01-27 12:22:21', 'Khách Hàng', '0123456789', 'Việt Nam', 1, '', 64000000),
+(24, 24, NULL, '2022-05-04 15:45:21', 'Khách Hàngaaaaaaaaaaaaa', '0123456789', 'Việt Nam', 1, '', 22000000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_product`
+-- Cấu trúc bảng cho bảng `order_product`
 --
 
 CREATE TABLE `order_product` (
@@ -174,17 +174,18 @@ CREATE TABLE `order_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `order_product`
+-- Đang đổ dữ liệu cho bảng `order_product`
 --
 
 INSERT INTO `order_product` (`order_id`, `product_id`, `quantity`) VALUES
 (23, 18, 1),
-(23, 19, 1);
+(23, 19, 1),
+(24, 19, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_status`
+-- Cấu trúc bảng cho bảng `order_status`
 --
 
 CREATE TABLE `order_status` (
@@ -193,7 +194,7 @@ CREATE TABLE `order_status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `order_status`
+-- Đang đổ dữ liệu cho bảng `order_status`
 --
 
 INSERT INTO `order_status` (`id`, `name`) VALUES
@@ -205,7 +206,7 @@ INSERT INTO `order_status` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -220,7 +221,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `photo`, `created`, `price`, `manufacturer_id`, `menu_id`) VALUES
@@ -235,19 +236,40 @@ INSERT INTO `products` (`id`, `name`, `description`, `photo`, `created`, `price`
 (18, 'Samsung Galaxy Z Fold3 5G 256GB', 'Đánh giá chi tiết Samsung Galaxy Z Fold3 5G\r\nKhi bạn mở ra màn hình gập lớn tới 7,6 inch trên Samsung Galaxy Z Fold3 5G là lúc bạn đã mở ra một tương lai hoàn toàn mới cho thế giới smartphone, nơi công nghệ vượt qua mọi giới hạn, cho trải nghiệm hoàn hảo nhất ở một thiết bị di động nhỏ gọn.\r\n\r\nSamsung Galaxy Z Fold3 5G\r\n\r\nGập mở linh hoạt, màn hình lớn hơn nhưng lại nhỏ gọn hơn\r\nVới một màn hình gập, Samsung Galaxy Z Fold3 5G đã giải quyết bài toán đưa màn hình lớn lên một chiếc điện thoại di động. Trong trạng thái gập, Galaxy Z Fold3 5G thậm chí còn nhỏ hơn một chiếc smartphone thông thường, dễ dàng cho vào túi xách, túi quần, sử dụng bằng một tay.\r\n\r\nCòn khi bạn mở màn hình gập, mọi thứ sẽ trở nên sống động hơn bao giờ hết với kích thước lớn tới 7,6 inch. Hơn nữa, đây còn là màn hình tỉ lệ vuông, cho diện tích sử dụng lớn gấp đôi so với smartphone thông thường.\r\n\r\nthiết kế Samsung Galaxy Z Fold3 5G\r\n\r\nMàn hình ngoài tiện lợi\r\nNgay cả khi trong trạng thái gập, bạn vẫn hoàn toàn có thể sử dụng Samsung Galaxy Z Fold3 5G bình thường với màn hình ngoài kích thước 6,2 inch. Chất lượng của màn hình này cũng đứng trong top đầu hiện nay với công nghệ Dynamic AMOLED 2X, tần số quét 120Hz, hiển thị tuyệt đẹp và siêu mượt mà.\r\n\r\nMàn hình ngoài cho phép bạn sử dụng điện thoại tiện lợi hơn, trong những trường hợp cần thao tác nhanh bằng một tay mà không cần phải mở màn hình lớn.\r\n\r\nmàn hình Samsung Galaxy Z Fold3 5G\r\n\r\nThế giới giải trí hoàn hảo\r\nThât khó tin khi chiếc điện thoại nằm gọn trong túi của bạn lại có thể mở ra một thế giới giải trí hoàn hảo. Bạn chỉ cần mở màn hình gập của Galaxy Z Fold3 5G ra một cách sành điệu, trước mắt sẽ là không gian hiển thị cực lớn Infinity Flex 7,6 inch, camera trước ẩn dưới màn hình, tạo nên những hình ảnh tuyệt đẹp không điểm khuyết. Trải nghiệm đọc báo, đọc sách, chơi game, xem phim của bạn thực sự sống động đến mức khó tin trên Z Fold3 5G.\r\n\r\ngiải trí Samsung Galaxy Z Fold3 5G\r\n\r\nSử dụng điện thoại theo cách của riêng bạn\r\nMàn hình Samsung Galaxy Z Fold3 5G có thể gập theo bất cứ góc độ nào bạn mong muốn, tạo nên trải nghiệm sử dụng điện thoại sáng tạo hơn bao giờ hết.\r\n\r\nBạn có thể gập theo dạng một chiếc laptop để nhập liệu trực quan; sử dụng camera chính để chụp ảnh selfie; vừa chụp ảnh vừa xem trước trên cùng một màn hình. Chính bạn sẽ quyết định cách sử dụng Galaxy Z Fold3 5G theo phong cách thú vị của riêng bạn.\r\n\r\nsử dụng Samsung Galaxy Z Fold3 5G\r\n\r\nĐẹp tuyệt tác, bền vững với thời gian\r\nSamsung Galaxy Z Fold3 5G được chế tác từ những vật liệu cao cấp và bền bỉ nhất trong ngành công nghiệp smartphone. Phần khung viền được làm từ hợp kim nhôm Armor Alumium siêu bền, cả màn hình trong và màn hình ngoài đều được bảo vệ bằng kính cường lực Gorilla Glass Victus cứng cáp, cho khả năng chống trầy vượt trội gấp 4 lần cùng khả năng chống va đập khi rơi từ độ cao 2m.\r\n\r\nTrong khi đó phần màn hình gập sử dụng kính Ultra Thin Glass siêu mỏng, là bước tiến lớn trong công nghệ màn hình gập, cho trải nghiệm gập mở linh hoạt hơn, đồng thời bền bỉ hơn 80% trước đây. Đặc biệt, Z Fold3 5G còn là chiếc điện thoại màn hình gập đầu tiên có thể kháng nước với chuẩn kháng nước IPX8.\r\n\r\nthiết kế Samsung Galaxy Z Fold3 5G\r\n\r\nSáng tạo vô hạn với bút S Pen\r\nS Pen đã từng thể hiện quyền năng tuyệt đỉnh trên dòng Galaxy Note, giờ đây với một màn hình lớn chưa từng thấy ở thế giới smartphone, S Pen sẽ mang đến sự sáng tạo vô hạn. Tha hồ ghi chú viết vẽ với những nét bút tự nhiên, mượt mà và chính xác trên không gian màn hình cực lớn, khả năng gập mở linh hoạt.\r\n\r\nNhờ S Pen, bạn có thể chia màn hình thành nhiều cửa sổ ứng dụng, sử dụng một cách trực quan và liền mạch. Dễ dàng thực hiện nhiều việc cùng lúc với sự kết hợp hoàn hảo của S Pen và Samsung Galaxy Z Fold3 5G.\r\n\r\nbút S Pen của Samsung Galaxy Z Fold3 5G\r\n\r\nÂm thanh chuẩn nhà hát\r\nKhông chỉ mãn nhãn với màn hình không điểm khuyết cực lớn 7,6 inch, bạn còn được đắm chìm trong thế giới âm thanh từ hệ thống loa stereo chân thực và công nghệ Dolby Atmos cho bạn chất âm cao cấp như đang ở trong rạp hát. Một rạp chiếu phim di động ngay trong túi của bạn, Samsung Galaxy Z Fold3 5G biến mọi điều không thể thành có thể.\r\n\r\nâm thanh Samsung Galaxy Z Fold3 5G\r\n\r\nChơi game chưa bao giờ đã đến thế\r\nHãy thử tưởng tượng về việc trải nghiệm những tựa game đỉnh cao trên màn hình lớn gấp đôi thông thường, công nghệ Dynamic AMOLED 2X hiển thị sống động hàng đầu, tần số quét 120Hz siêu mượt và sức mạnh cấu hình tuyệt vời, mọi thứ quả thực rất đáng kinh ngạc trên Samsung Galaxy Z Fold3 5G.\r\n\r\nThưởng thức những hình ảnh sắc nét, những chuyển động cực nhanh, những hiệu ứng đồ họa chân thực được điều khiển bằng những thao tác mượt mà từ chính bạn, trải nghiệm chơi game chưa bao giờ hấp dẫn đến thế.\r\n\r\nchơi game Samsung Galaxy Z Fold3 5G\r\n\r\nChụp ảnh và quay video chuyên nghiệp\r\nVới năm camera ở ba vị trí khác nhau, hai màn hình trong đó một màn hình có khả năng gập mở linh hoạt, Samsung Galaxy Z Fold3 5G mang tới sự sáng tạo không ngờ trong chụp ảnh và quay video. Việc chuyển đổi linh hoạt giữa các camera, sử dụng hai màn hình để xem trước giúp bạn có thể chụp ảnh, quay video ở nhiều góc độ, nhiều mục đích hơn.\r\n\r\nNhững công nghệ tiên tiến nhất trong nhiếp ảnh của Samsung như điểm ảnh kép Dual Pixel, chống rung quang học OIS đều được tích hợp trên Samsung Galaxy Z Fold3 5G, cho hình ảnh và video chất lượng đáng tin cậy.\r\n\r\nchụp ảnh Samsung Galaxy Z Fold3 5G\r\n\r\nĐầy đủ tính năng camera\r\nTất cả những tính năng camera hàng đầu đều có mặt trên Samsung Galaxy Z Fold3 5G. Từ chụp chân dung, chụp đêm cho đến chụp ảnh góc siêu rộng, chụp zoom quang học 2x, bạn đều có những bức ảnh rõ nét, màu sắc, độ sáng và độ tương phản hoàn hảo.\r\n\r\nBạn còn có thể thử tài đạo diễn nhờ khả năng quay video lấy nét chính xác, quay chuyển động nhanh hay cả quay video timelapse đầy lôi cuốn với những ánh đèn lung linh trong đêm tối.', '1643285942.jpg', NULL, 42000000, 8, 2),
 (19, 'Samsung Galaxy S21 Ultra 128GB', 'Đánh giá chi tiết Samsung Galaxy S21 Ultra\r\nSamsung Galaxy S21 Ultra 5G mang đến cuộc cách mạng trong nhiếp ảnh với khả năng tạo ra kiệt tác dễ dàng hơn bao giờ hết; ngoài ra máy còn sở hữu bộ vi xử lý nhanh nhất, màn hình đẹp nhất, kết nối 5G và thời lượng pin thoải mái suốt cả ngày.\r\n\r\nSamsung Galaxy S21 Ultra 5G\r\n\r\nSự kết hợp của thiết kế phá cách và giá trị nguyên bản\r\nThiết kế Samsung Galaxy S21 Ultra là sự hội tụ giữa những đường nét phá cách và giá trị nguyên bản. Nổi bật nhất chính là cụm camera kích thước cực lớn, cho thấy điểm nhấn của chiếc S21 Ultra năm nay là khả năng nhiếp ảnh. Toàn thân máy đều có màu đen mờ nguyên bản, đơn giản nhưng rất sang trọng và lịch lãm. Nếu bạn thích sự nổi bật và thời trang hơn, có thể chọn màu bạc ngẫu hứng với vẻ đẹp sắc sảo.\r\n\r\nthiết kế Samsung Galaxy S21 Ultra 5G\r\n\r\nMàn hình đỉnh cao nhất thế giới smartphone\r\nDù là thông số kỹ thuật hay trải nghiệm thực tế thì màn hình Samsung Galaxy S21 Ultra 5G cũng xứng đáng đứng vị trí số một trong thế giới smartphone hiện nay.\r\n\r\nĐiện thoại sở hữu màn hình vô cực 6,8 inch Infinity-O công nghệ Dynamic AMOLED 2X trứ danh của Samsung, hỗ trợ HDR 10+ và độ phân giải siêu cao 1440 x 3200 pixels. Mọi thứ đều trở nên sống động và tuyệt vời hơn bao giờ hết trên màn hình S21 Ultra. Chưa hết, màn hình này còn có độ sáng tối đa lên tới 1500 nits, công nghệ bảo vệ mắt, tương thích với bút S Pen và tần số quét 120 Hz siêu mượt.\r\n\r\nmàn hình Samsung Galaxy S21 Ultra 5G\r\n\r\nKính cường lực cứng cáp nhất từ trước đến nay\r\nBảo vệ cho màn hình tuyệt mỹ của Samsung Galaxy S21 Ultra 5G là kính cường lực Gorilla Glass Victus, loại kính cường lực ưu việt nhất từ trước đến nay. Bạn sẽ yên tâm hơn rất nhiều khi màn hình bền bỉ vượt trội, bảo vệ cho cả mặt trước và mặt sau điện thoại. Khả năng chống trầy xước, chống va đập tối đa và cả chống nước chuẩn IP68 giúp chiếc S21 Ultra trở nên cứng cỏi, mạnh mẽ hơn.\r\n\r\nkính cường lực Samsung Galaxy S21 Ultra 5G\r\n\r\nBộ camera chuyên nghiệp nhất từng có trên smartphone\r\nNhững gì có mặt trên cụm camera sau của Galaxy S21 Ultra 5G chính là những cảm biến xuất sắc nhất từng xuất hiện trên điện thoại. Nổi bật nhất phải kể đến camera chính độ phân giải lên tới 108MP, mang đến độ chi tiết khổng lồ trong mỗi bức ảnh.\r\n\r\nViệc sử dụng tới 2 camera Tele 10MP giúp khả năng thu phóng của S21 Ultra thực sự đáng kinh ngạc. Bạn có thể thu phóng chuẩn không gian tối đa 100x, đưa những điều ở xa tận chân trời đến gần ngay trước mắt. Đặc biệt, khả năng thu phóng còn thể hiện rất mượt mà khi quay video, giúp các đoạn phim trở nên sống động hơn bao giờ hết.\r\n\r\ncamera Samsung Galaxy S21 Ultra 5G\r\n\r\nSáng tạo kiệt tác trong màn đêm\r\nCông nghệ chụp ảnh thiếu sáng vốn đã được đánh giá cao của Samsung nay còn ấn tượng hơn nữa trên S21 Ultra. Bộ cảm biến camera chất lượng và tính năng chụp đêm thông minh giúp bạn khắc họa rõ nét những vẻ đẹp trong màn đêm một cách chân thực, màu sắc rực rỡ và sống động.\r\n\r\nTốc độ chụp được cải thiện đáng kể dù là trong đêm tối mang đến mức nhiễu ảnh tối thiểu và thời gian phơi sáng tối ưu, để bạn nhanh chóng chớp lại những khoảnh khắc đáng nhớ.\r\n\r\nchụp đêm Samsung Galaxy S21 Ultra 5G\r\n\r\nĐẳng cấp chụp ảnh chân dung\r\nNhững bức ảnh chân dung chụp bằng Samsung Galaxy S21 Ultra 5G đã đạt tới tầm nghệ thuật. Ngoài khả năng tách chủ thể và phông nền hoàn hảo, màu sắc chính xác, độ chi tiết cao, trên S21 Ultra còn có những bộ lọc màu chuẩn studio được hỗ trợ bởi công nghệ AI siêu việt. Các chi tiết như góc mặt, ánh sáng, hướng ánh sáng và độ sâu trường ảnh đều được tối ưu để bạn có được bức ảnh chân dung sinh động đến khó tin.\r\n\r\nchân dung Samsung Galaxy S21 Ultra 5G\r\n\r\nQuay video 8K, sẵn sàng với những thước phim chuẩn chiếu rạp\r\nKhả năng quay video độ phân giải siêu nét tới 8K giúp những thước phim từ bạn quay có thể trình chiếu trên màn hình lớn như ở rạp chiếu phim một cách rõ nét và sống động. Chỉ đơn giản quay những khung cảnh đời thường, những tình huống vui nhộn trong cuộc sống, tất cả cũng có thể trở thành kiệt tác dưới ống kính của Samsung Galaxy S21 Ultra 5G. Những đoạn phim này sắc nét đến nỗi bạn chỉ cần cắt một hình ảnh bất kỳ trong video 8K cũng tạo nên một bức ảnh đầy chất lượng.\r\n\r\n\r\n\r\nQuay phim siêu chống rung\r\nBạn là người thích đi du lịch và muốn ghi lại mọi khoảnh khắc trong chuyến đi. Chế độ quay phim siêu chống rung sẽ biến Samsung Galaxy S21 Ultra 5G trở thành một camera hành trình thực thụ. Tính năng chống rung AI giúp đoạn phim trở nên mượt mà một cách đáng kinh ngạc ở tốc độ khung hình 60fps, kể cả khi bạn vừa quay vừa di chuyển ở tốc độ cao, tất cả vẫn hết sức tuyệt vời.\r\n\r\n\r\n\r\nBộ vi xử lý 5nm đầu tiên trên điện thoại Galaxy\r\nSamsung Galaxy S21 Ultra 5G trang bị bộ vi xử lý Exynos 2100, đây là bộ vi xử lý sản xuất trên tiến trình 5nm đầu tiên trên điện thoại Galaxy. Với tốc độ CPU nhanh hơn 20%, GPU mạnh hơn 35%, công nghệ AI nhanh hơn 2 lần, mọi trải nghiệm của bạn đều được phản hồi ngay lập tức trên S21 Ultra. Dù là chơi những game 3D nặng hay chỉnh sửa các đoạn video 8K, tất cả đều diễn ra mượt mà và nhanh chóng. Trải nghiệm trên Samsung Galaxy S21 Ultra 5G xứng tầm đẳng cấp của chiếc điện thoại đầu bảng hiện nay.\r\n\r\ncấu hình Samsung Galaxy S21 Ultra 5G\r\n\r\nKết nối 5G siêu tốc\r\nGalaxy S21 Ultra hỗ trợ kết nối 5G và tương thích hoàn hảo với mạng 5G của các nhà mạng tại Việt Nam. Tha hồ tải phim trong nháy mắt, chơi game online không độ trễ và tận hưởng tốc độ mạng không dây nhanh nhất từ trước đến nay. Không chỉ 5G, S21 Ultra còn tích hợp kết nối Wi-Fi 6E đầu tiên trên thế giới, cho khả năng thu sóng khỏe, mạng ổn định và độ bảo mật cao.\r\n\r\nkết nối Samsung Galaxy S21 Ultra 5G\r\n\r\nThời lượng pin bứt phá\r\nViên pin dung lượng lên tới 5000 mAh, bộ vi xử lý tối ưu và màn hình tiết kiệm năng lượng giúp bạn trải nghiệm Samsung Galaxy S21 Ultra 5G xuyên suốt ngày dài, kể cả khi kết nối 5G luôn bật. Điện thoại hỗ trợ những công nghệ sạc tiên tiến nhất hiện nay như sạc nhanh siêu tốc 25W; sạc nhanh không dây 2.0; chia sẻ pin không dây. S21 Ultra có thể sạc nhanh và linh hoạt ở bất cứ đâu.', '1643286044.jpg', NULL, 22000000, 8, 2);
 
+-- --------------------------------------------------------
+
 --
--- Indexes for dumped tables
+-- Cấu trúc bảng cho bảng `rating_products`
+--
+
+CREATE TABLE `rating_products` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `comment` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `rating_products`
+--
+
+INSERT INTO `rating_products` (`id`, `product_id`, `customer_id`, `rating`, `comment`) VALUES
+(1, 7, 24, 4, 'test');
+
+--
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `customers`
+-- Chỉ mục cho bảng `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `employees`
+-- Chỉ mục cho bảng `employees`
 --
 ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`),
@@ -255,13 +277,13 @@ ALTER TABLE `employees`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `forgot_password`
+-- Chỉ mục cho bảng `forgot_password`
 --
 ALTER TABLE `forgot_password`
   ADD UNIQUE KEY `customer_id` (`customer_id`);
 
 --
--- Indexes for table `manufactures`
+-- Chỉ mục cho bảng `manufactures`
 --
 ALTER TABLE `manufactures`
   ADD PRIMARY KEY (`id`),
@@ -269,14 +291,14 @@ ALTER TABLE `manufactures`
   ADD KEY `CK_menu` (`menu_id`);
 
 --
--- Indexes for table `menu`
+-- Chỉ mục cho bảng `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `orders`
+-- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
@@ -284,20 +306,20 @@ ALTER TABLE `orders`
   ADD KEY `CK_employee_id` (`employee_id`);
 
 --
--- Indexes for table `order_product`
+-- Chỉ mục cho bảng `order_product`
 --
 ALTER TABLE `order_product`
   ADD PRIMARY KEY (`order_id`,`product_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `order_status`
+-- Chỉ mục cho bảng `order_status`
 --
 ALTER TABLE `order_status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -305,83 +327,95 @@ ALTER TABLE `products`
   ADD KEY `CK_menu_id` (`menu_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Chỉ mục cho bảng `rating_products`
+--
+ALTER TABLE `rating_products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `employees`
+-- AUTO_INCREMENT cho bảng `employees`
 --
 ALTER TABLE `employees`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `manufactures`
+-- AUTO_INCREMENT cho bảng `manufactures`
 --
 ALTER TABLE `manufactures`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT cho bảng `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `order_status`
+-- AUTO_INCREMENT cho bảng `order_status`
 --
 ALTER TABLE `order_status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT cho bảng `rating_products`
+--
+ALTER TABLE `rating_products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `forgot_password`
+-- Các ràng buộc cho bảng `forgot_password`
 --
 ALTER TABLE `forgot_password`
   ADD CONSTRAINT `forgot_password_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`);
 
 --
--- Constraints for table `manufactures`
+-- Các ràng buộc cho bảng `manufactures`
 --
 ALTER TABLE `manufactures`
   ADD CONSTRAINT `CK_menu` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`);
 
 --
--- Constraints for table `orders`
+-- Các ràng buộc cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `CK_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`),
   ADD CONSTRAINT `CK_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`);
 
 --
--- Constraints for table `order_product`
+-- Các ràng buộc cho bảng `order_product`
 --
 ALTER TABLE `order_product`
   ADD CONSTRAINT `order_product_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   ADD CONSTRAINT `order_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 --
--- Constraints for table `products`
+-- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `CK_manufacturer_id` FOREIGN KEY (`manufacturer_id`) REFERENCES `manufactures` (`id`),

@@ -102,16 +102,16 @@
 	
 }
 	
-ul{
+div#div_tren>.duoi ul{
 	list-style-type: none;
 	padding-left: 20px;
 	margin: 0;
 }
 
-ul > li > ul{
+div#div_tren>.duoi ul > li > ul{
 	display: none;
 }
-ul > li:hover ul{
+div#div_tren>.duoi ul > li:hover ul{
 	display: block;
 	position: absolute;
 	background: white;			
@@ -122,14 +122,14 @@ ul > li:hover ul{
 
 
 }
-ul > li >ul >li{
+div#div_tren>.duoi ul > li >ul >li{
 	
 	margin: 0px ;
 	border: none;
 	padding: 20px;
 
 }
-ul li{
+div#div_tren>.duoi ul li{
 	float: left;
 	width: 150px;			
 	height: 36px;
@@ -142,20 +142,20 @@ ul li{
 	
 
 }
-ul>li>a{
+div#div_tren>.duoi ul>li>a{
 	align-items: center;
 	height: 100%;
 	display: flex;
 	color: white;
 	
 }
-ul>li>ul>li>a{
+div#div_tren>.duoi ul>li>ul>li>a{
 	color: black;
 }
-ul>li>a:hover {
+div#div_tren>.duoi ul>li>a:hover {
 	color: #BBBBBB;
 }
-ul>li>ul>li>a:hover {
+div#div_tren>.duoi ul>li>ul>li>a:hover {
 	color: red;
 	font-weight: 700;
 	font-size: 17px;

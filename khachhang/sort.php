@@ -30,6 +30,44 @@ if ($order == 'new') {
 	order by price $order
 	limit $number_results_per_page offset $next_page";
 }
+switch ($order) {
+	case 'new':
+		$sql = "select products.*
+		from products
+		join menu where products.menu_id = menu.id and menu.name like '$name'
+		order by id desc
+		limit $number_results_per_page offset $next_page";
+		break;
+	case 'desc':
+	case 'asc':
+		$sql = "select products.*
+		from products
+		join menu where products.menu_id = menu.id and menu.name like '$name'
+		order by price $order
+		limit $number_results_per_page offset $next_page";
+		break;
+	case 'manu_new':
+		$sql = "select products.*
+		from products
+		join manufactures where products.manufacturer_id = manufactures.id and manufactures.name like '$name'
+		order by id desc
+		limit $number_results_per_page offset $next_page";
+		break;
+	case 'manu_desc':
+	$sql = "select products.*
+		from products
+		join manufactures where products.manufacturer_id = manufactures.id and manufactures.name like '$name'
+		order by price desc
+		limit $number_results_per_page offset $next_page";
+		break;
+	case 'manu_asc':
+		$sql = "select products.*
+		from products
+		join manufactures where products.manufacturer_id = manufactures.id and manufactures.name like '$name'
+		order by price asc
+		limit $number_results_per_page offset $next_page";
+		break;
+}
 $result = mysqli_query($connect,$sql);
 ?>
 
