@@ -13,8 +13,6 @@ $sql = "select count(*) from rating_products
 where product_id = '$product_id' and customer_id ='$customer_id'";
 $result = mysqli_query($connect,$sql);
 $number_rows = mysqli_fetch_array($result)['count(*)'];
-if ($number_rows == 1) {	
-
 if ($number_rows == 1) {
 	$sql ="update rating_products
 	set 
